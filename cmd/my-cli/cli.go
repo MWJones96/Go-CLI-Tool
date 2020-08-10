@@ -15,9 +15,9 @@ func main() {
 	app.Usage = "Query IP, CNAME, MX, Name Servers"
 
 	flags := []cli.Flag{
-		cli.StringFlag{
+		&cli.StringFlag{
 			Name:  "host",
-			Value: "mwj96.dev",
+			Value: "google.com",
 		},
 	}
 
