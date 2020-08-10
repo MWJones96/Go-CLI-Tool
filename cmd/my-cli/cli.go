@@ -56,6 +56,21 @@ func main() {
 				return nil
 			},
 		},
+		{
+			Name:  "cname",
+			Usage: "Look up CNAME",
+			Flags: flags,
+			Action: func(c *cli.Context) error {
+				cname, err := net.LookupCNAME(c.String("host"))
+				if err != nil {
+					return err
+				}
+
+				fmt.Println(cname)
+
+				return nil
+			},
+		},
 	}
 
 	err := app.Run(os.Args)
